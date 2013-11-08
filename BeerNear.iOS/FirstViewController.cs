@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.Text;
 
 namespace BeerNear.iOS
 {
@@ -36,10 +37,18 @@ namespace BeerNear.iOS
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
-			this.txtOutput.Text = "Hello world!";
-			this.btnLoadBeer.TouchUpInside += (sender, e) => {
-				this.txtOutput.Text = this._untappdService.GetStuff();
-			};
+//			this.txtOutput.Text = "Hello world!";
+//			this.btnLoadBeer.TouchUpInside += (sender, e) => {
+//				this.txtOutput.Text = this._untappdService.GetUserBadges("derekhubbard");
+//			};
+
+			// TODO: Blocking - evil.  Can we move this off UI thread?
+			var badges = this._untappdService.GetUserBadges ("derekhubbard");
+			var sb = new StringBuilder ();
+			foreach (var badge in badges) {
+				sb.AppendLine (badge.BadgeName);
+			}
+			this.txtOutput.Text = sb.ToString ();
 		}
 
 		public override void ViewWillAppear (bool animated)

@@ -13,9 +13,6 @@ namespace BeerNear.iOS
 	partial class FirstViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIButton btnLoadBeer { get; set; }
-
-		[Outlet]
 		MonoTouch.UIKit.UITextView txtOutput { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -23,11 +20,6 @@ namespace BeerNear.iOS
 			if (txtOutput != null) {
 				txtOutput.Dispose ();
 				txtOutput = null;
-			}
-
-			if (btnLoadBeer != null) {
-				btnLoadBeer.Dispose ();
-				btnLoadBeer = null;
 			}
 		}
 	}
