@@ -7,6 +7,8 @@ namespace BeerNear.iOS
 {
 	public partial class FirstViewController : UIViewController
 	{
+		private UntappdService _untappdService;
+
 		static bool UserInterfaceIdiomIsPhone {
 			get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
 		}
@@ -15,6 +17,8 @@ namespace BeerNear.iOS
 		{
 			this.Title = NSBundle.MainBundle.LocalizedString ("First", "First");
 			this.TabBarItem.Image = UIImage.FromBundle ("first");
+
+			this._untappdService = new UntappdService ();
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -32,6 +36,10 @@ namespace BeerNear.iOS
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
+			this.txtOutput.Text = "Hello world!";
+			this.btnLoadBeer.TouchUpInside += (sender, e) => {
+				this.txtOutput.Text = this._untappdService.GetStuff();
+			};
 		}
 
 		public override void ViewWillAppear (bool animated)

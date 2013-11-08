@@ -2,3 +2,5 @@ mscorlib.dll
 System.Core.dll
 System.dll
 System.Xml.dll
+RestSharp.MonoTouch.dll
+System.Xml.Linq.dll
