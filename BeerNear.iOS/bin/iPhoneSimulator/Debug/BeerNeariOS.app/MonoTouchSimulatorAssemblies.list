@@ -4,3 +4,5 @@ System.dll
 System.Xml.dll
 RestSharp.MonoTouch.dll
 System.Xml.Linq.dll
+Newtonsoft.Json.dll
+System.Runtime.Serialization.dll

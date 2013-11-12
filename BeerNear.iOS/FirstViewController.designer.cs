@@ -13,13 +13,13 @@ namespace BeerNear.iOS
 	partial class FirstViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UITextView txtOutput { get; set; }
+		MonoTouch.UIKit.UICollectionView badgeCollection { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (txtOutput != null) {
-				txtOutput.Dispose ();
-				txtOutput = null;
+			if (badgeCollection != null) {
+				badgeCollection.Dispose ();
+				badgeCollection = null;
 			}
 		}
 	}

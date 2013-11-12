@@ -1,0 +1,37 @@
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4.7.0" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BeerNear.iOS/FirstViewController.cs">
+    <Files>
+      <File FileName="BeerNear.iOS/AppDelegate.cs" Line="35" Column="15" />
+      <File FileName="BeerNear.iOS/Services/UntappdService.cs" Line="1" Column="1" />
+      <File FileName="BeerNear.iOS/FirstViewController.cs" Line="48" Column="56" />
+      <File FileName="BeerNear.iOS/FirstViewController.designer.cs" Line="1" Column="1" />
+      <File FileName="BeerNear.iOS/Main.cs" Line="18" Column="3" />
+      <File FileName="BeerNear.iOS/Models/Badge.cs" Line="1" Column="1" />
+      <File FileName="BeerNear.iOS/BadgeTableSource.cs" Line="21" Column="3" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="BeerNear.iOS" expanded="True">
+            <Node name="ComponentReferenceFolder" expanded="True" />
+            <Node name="Models" expanded="True" />
+            <Node name="Services" expanded="True" />
+            <Node name="FirstViewController.cs" expanded="True" selected="True" />
+            <Node name="SecondViewController.cs" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/Derek/projects/BeerNear/BeerNear.iOS/FirstViewController.cs" line="38" column="1" />
+      <Breakpoint file="/Users/Derek/projects/BeerNear/BeerNear.iOS/FirstViewController.cs" line="20" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

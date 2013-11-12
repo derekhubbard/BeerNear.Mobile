@@ -3,10 +3,11 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.Text;
+using System.Collections.Generic;
 
 namespace BeerNear.iOS
 {
-	public partial class FirstViewController : UIViewController
+	public partial class FirstViewController : UITableViewController
 	{
 		private UntappdService _untappdService;
 
@@ -16,7 +17,7 @@ namespace BeerNear.iOS
 
 		public FirstViewController (IntPtr handle) : base (handle)
 		{
-			this.Title = NSBundle.MainBundle.LocalizedString ("First", "First");
+			this.Title = NSBundle.MainBundle.LocalizedString ("Badges", "Badges");
 			this.TabBarItem.Image = UIImage.FromBundle ("first");
 
 			this._untappdService = new UntappdService ();
@@ -44,11 +45,7 @@ namespace BeerNear.iOS
 
 			// TODO: Blocking - evil.  Can we move this off UI thread?
 			var badges = this._untappdService.GetUserBadges ("derekhubbard");
-			var sb = new StringBuilder ();
-			foreach (var badge in badges) {
-				sb.AppendLine (badge.BadgeName);
-			}
-			this.txtOutput.Text = sb.ToString ();
+			this.TableView.Source = new BadgeTableSource (badges);
 		}
 
 		public override void ViewWillAppear (bool animated)

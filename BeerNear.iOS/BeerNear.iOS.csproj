@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Services\UntappdService.cs" />
     <Compile Include="Models\Badge.cs" />
+    <Compile Include="BadgeTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
@@ -124,12 +125,10 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <XamarinComponentReference Include="restsharp">
-      <InstallationInProgress>True</InstallationInProgress>
       <Version>104.1.0</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
     <XamarinComponentReference Include="json.net">
-      <InstallationInProgress>True</InstallationInProgress>
       <Version>4.5.11</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
