@@ -21,12 +21,13 @@ namespace BeerNear.iOS
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
-			UITableViewCell cell = tableView.DequeueReusableCell ("BadgeCell");
+			var cell = tableView.DequeueReusableCell ("BadgeCell") as BadgeTableCell;
 			if (cell == null) {
-				cell = new UITableViewCell (UITableViewCellStyle.Default, "BadgeCell");
+				cell = new BadgeTableCell();
 			}
+
 			Badge badge = _badges[indexPath.Row];
-			cell.TextLabel.Text = badge.BadgeName;
+			cell.BindDataToCell (badge);
 
 			return cell;
 		}
