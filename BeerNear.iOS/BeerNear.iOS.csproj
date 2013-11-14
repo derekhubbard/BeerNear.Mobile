@@ -107,15 +107,15 @@
     <Compile Include="Features\Badges\BadgesViewController.designer.cs">
       <DependentUpon>BadgesViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Badges\BadgeTableCell.cs" />
-    <Compile Include="Features\Badges\BadgeTableCell.designer.cs">
-      <DependentUpon>..\..\Badges\BadgeTableCell.cs</DependentUpon>
+    <Compile Include="Features\DistinctBeer\DistinctBeerViewController.cs" />
+    <Compile Include="Features\DistinctBeer\DistinctBeerViewController.designer.cs">
+      <DependentUpon>DistinctBeerViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Badges\BadgeTableSource.cs" />
-    <Compile Include="Features\DistinctBeer\DistinctBeersViewController.cs" />
-    <Compile Include="Features\DistinctBeer\DistinctBeersViewController.designer.cs">
-      <DependentUpon>DistinctBeersViewController.cs</DependentUpon>
+    <Compile Include="Features\Badges\BadgesTableCell.cs" />
+    <Compile Include="Features\Badges\BadgesTableCell.designer.cs">
+      <DependentUpon>BadgesTableCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Features\Badges\BadgesTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

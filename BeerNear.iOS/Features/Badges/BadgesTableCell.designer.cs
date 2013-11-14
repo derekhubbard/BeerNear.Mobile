@@ -10,7 +10,7 @@ using System.CodeDom.Compiler;
 namespace BeerNear.iOS
 {
 	[Register ("BadgeTableCell")]
-	partial class BadgeTableCell
+	partial class BadgesTableCell
 	{
 		[Outlet]
 		MonoTouch.UIKit.UITextView BadgeDescription { get; set; }

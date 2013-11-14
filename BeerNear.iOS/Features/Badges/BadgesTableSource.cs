@@ -5,11 +5,11 @@ using MonoTouch.Foundation;
 
 namespace BeerNear.iOS
 {
-	public class BadgeTableSource : UITableViewSource
+	public class BadgesTableSource : UITableViewSource
 	{
 		private List<Badge> _badges;
 
-		public BadgeTableSource (List<Badge> badges)
+		public BadgesTableSource (List<Badge> badges)
 		{
 			_badges = badges;
 		}
@@ -21,9 +21,9 @@ namespace BeerNear.iOS
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
-			var cell = tableView.DequeueReusableCell ("BadgeCell") as BadgeTableCell;
+			var cell = tableView.DequeueReusableCell ("BadgeCell") as BadgesTableCell;
 			if (cell == null) {
-				cell = new BadgeTableCell();
+				cell = new BadgesTableCell();
 			}
 
 			Badge badge = _badges[indexPath.Row];

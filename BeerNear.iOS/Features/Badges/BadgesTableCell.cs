@@ -8,13 +8,13 @@ using MonoTouch.Dialog.Utilities;
 
 namespace BeerNear.iOS
 {
-	public partial class BadgeTableCell : UITableViewCell
+	public partial class BadgesTableCell : UITableViewCell
 	{
-		public BadgeTableCell() : base()
+		public BadgesTableCell() : base()
 		{
 		}
 
-		public BadgeTableCell (IntPtr handle) : base (handle)
+		public BadgesTableCell (IntPtr handle) : base (handle)
 		{
 		}
 

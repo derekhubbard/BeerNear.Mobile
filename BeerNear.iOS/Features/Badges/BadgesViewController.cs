@@ -47,7 +47,7 @@ namespace BeerNear.iOS
 
 			this._untappdService.GetUserBadgesAsync ("derekhubbard", (badges) => {
 				InvokeOnMainThread(() => {
-					this.TableView.Source = new BadgeTableSource(badges);
+					this.TableView.Source = new BadgesTableSource(badges);
 					this.TableView.ReloadData();
 				});
 			});
