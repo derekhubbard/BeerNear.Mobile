@@ -101,20 +101,20 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="FirstViewController.cs" />
-    <Compile Include="SecondViewController.cs" />
-    <Compile Include="FirstViewController.designer.cs">
-      <DependentUpon>FirstViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SecondViewController.designer.cs">
-      <DependentUpon>SecondViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Services\UntappdService.cs" />
     <Compile Include="Models\Badge.cs" />
     <Compile Include="BadgeTableSource.cs" />
     <Compile Include="BadgeTableCell.cs" />
     <Compile Include="BadgeTableCell.designer.cs">
       <DependentUpon>BadgeTableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BadgesViewController.cs" />
+    <Compile Include="BadgesViewController.designer.cs">
+      <DependentUpon>BadgesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DistinctBeersViewController.cs" />
+    <Compile Include="DistinctBeersViewController.designer.cs">
+      <DependentUpon>DistinctBeersViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
