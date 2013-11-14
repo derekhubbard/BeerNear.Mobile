@@ -4,6 +4,7 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.Dialog.Utilities;
 
 namespace BeerNear.iOS
 {
@@ -21,6 +22,8 @@ namespace BeerNear.iOS
 		{
 			this.BadgeName.Text = badge.BadgeName;
 			this.BadgeDescription.Text = badge.BadgeDescription;
+			// TODO: Replace with valid fallback image.
+//			this.BadgeImage.Image = ImageLoader.DefaultRequestImage (new Uri ("https://www.google.com/images/srpr/logo11w.png"), this) ?? null;
 			// TODO: Bind additional properties
 		}
 	}

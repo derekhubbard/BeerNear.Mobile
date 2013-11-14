@@ -52,6 +52,28 @@ namespace BeerNear.iOS
 
 			return badges;
 		}
+
+		public void GetUserBadgesAsync(string userName, Action<List<Badge>> callback)
+		{
+			// TODO: Move url building to additional resource.
+			string uri = string.Format ("/user/badges/{0}?client_secret={1}&client_id={2}", userName, CLIENT_SECRET, CLIENT_ID);
+			var request = new RestRequest (uri, Method.GET);
+
+			Client.ExecuteAsync(request, (response) => {
+				var content = response.Content;
+
+				// TODO: Pull this out into a separate resource - this method does WAY too much.
+				JObject obj = JObject.Parse (content);
+				List<Badge> badges = obj ["response"] ["items"].Select (x => new Badge()
+				                                                        { 
+					BadgeId = (int)x["badge_id"],
+					BadgeName = (string)x["badge_name"],
+					BadgeDescription = (string)x["badge_description"]
+				}).ToList();
+
+				callback (badges);
+			});
+		}
 	}
 }
 

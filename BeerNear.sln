@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerNear.iOS", "BeerNear.iOS\BeerNear.iOS.csproj", "{697F131A-45BE-40D9-83D1-43B3DC18E24D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerNear.Test", "BeerNear.Test\BeerNear.Test.csproj", "{66E0F981-2FD9-41F7-ADCA-B60504267586}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -13,6 +15,18 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Release|iPhone.Build.0 = Release|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{66E0F981-2FD9-41F7-ADCA-B60504267586}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{697F131A-45BE-40D9-83D1-43B3DC18E24D}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{697F131A-45BE-40D9-83D1-43B3DC18E24D}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
 		{697F131A-45BE-40D9-83D1-43B3DC18E24D}.AppStore|iPhone.ActiveCfg = AppStore|iPhone

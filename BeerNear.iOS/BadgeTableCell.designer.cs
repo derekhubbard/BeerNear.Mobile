@@ -16,6 +16,9 @@ namespace BeerNear.iOS
 		MonoTouch.UIKit.UITextView BadgeDescription { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIImageView BadgeImage { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel BadgeName { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -28,6 +31,11 @@ namespace BeerNear.iOS
 			if (BadgeDescription != null) {
 				BadgeDescription.Dispose ();
 				BadgeDescription = null;
+			}
+
+			if (BadgeImage != null) {
+				BadgeImage.Dispose ();
+				BadgeImage = null;
 			}
 		}
 	}

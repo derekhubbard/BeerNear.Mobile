@@ -4,12 +4,14 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.Text;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace BeerNear.iOS
 {
 	public partial class FirstViewController : UITableViewController
 	{
 		private UntappdService _untappdService;
+//		private ObservableCollection<Badge> _badges;
 
 		static bool UserInterfaceIdiomIsPhone {
 			get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
@@ -31,21 +33,24 @@ namespace BeerNear.iOS
 			// Release any cached data, images, etc that aren't in use.
 		}
 
+		void HandleAppsCollectionChanged (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+		{
+			// Whenever the Items change, reload the data.
+			this.TableView.ReloadData ();
+		}
+
 		#region View lifecycle
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			
-			// Perform any additional setup after loading the view, typically from a nib.
-//			this.txtOutput.Text = "Hello world!";
-//			this.btnLoadBeer.TouchUpInside += (sender, e) => {
-//				this.txtOutput.Text = this._untappdService.GetUserBadges("derekhubbard");
-//			};
 
-			// TODO: Blocking - evil.  Can we move this off UI thread?
-			var badges = this._untappdService.GetUserBadges ("derekhubbard");
-			this.TableView.Source = new BadgeTableSource (badges);
+			this._untappdService.GetUserBadgesAsync ("derekhubbard", (badges) => {
+				InvokeOnMainThread(() => {
+					this.TableView.Source = new BadgeTableSource(badges);
+					this.TableView.ReloadData();
+				});
+			});
 		}
 
 		public override void ViewWillAppear (bool animated)
