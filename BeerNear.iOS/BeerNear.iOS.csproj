@@ -103,17 +103,17 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Services\UntappdService.cs" />
     <Compile Include="Models\Badge.cs" />
-    <Compile Include="BadgeTableSource.cs" />
-    <Compile Include="BadgeTableCell.cs" />
-    <Compile Include="BadgeTableCell.designer.cs">
-      <DependentUpon>BadgeTableCell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BadgesViewController.cs" />
-    <Compile Include="BadgesViewController.designer.cs">
+    <Compile Include="Features\Badges\BadgesViewController.cs" />
+    <Compile Include="Features\Badges\BadgesViewController.designer.cs">
       <DependentUpon>BadgesViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="DistinctBeersViewController.cs" />
-    <Compile Include="DistinctBeersViewController.designer.cs">
+    <Compile Include="Features\Badges\BadgeTableCell.cs" />
+    <Compile Include="Features\Badges\BadgeTableCell.designer.cs">
+      <DependentUpon>..\..\Badges\BadgeTableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Badges\BadgeTableSource.cs" />
+    <Compile Include="Features\DistinctBeer\DistinctBeersViewController.cs" />
+    <Compile Include="Features\DistinctBeer\DistinctBeersViewController.designer.cs">
       <DependentUpon>DistinctBeersViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -141,5 +141,7 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Models\" />
+    <Folder Include="Features\" />
+    <Folder Include="Features\DistinctBeer\" />
   </ItemGroup>
 </Project>
