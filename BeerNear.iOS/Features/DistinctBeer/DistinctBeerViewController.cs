@@ -5,13 +5,13 @@ using MonoTouch.UIKit;
 
 namespace BeerNear.iOS
 {
-	public partial class DistinctBeersViewController : UIViewController
+	public partial class DistinctBeerViewController : UIViewController
 	{
 		static bool UserInterfaceIdiomIsPhone {
 			get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
 		}
 
-		public DistinctBeersViewController (IntPtr handle) : base (handle)
+		public DistinctBeerViewController (IntPtr handle) : base (handle)
 		{
 			this.Title = NSBundle.MainBundle.LocalizedString ("Distinct Beer", "Distinct Beer");
 			this.TabBarItem.Image = UIImage.FromBundle ("second");

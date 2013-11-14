@@ -8,7 +8,7 @@ using MonoTouch.Foundation;
 namespace BeerNear.iOS
 {
 	[Register ("SecondViewController")]
-	partial class DistinctBeersViewController
+	partial class DistinctBeerViewController
 	{
 		void ReleaseDesignerOutlets ()
 		{
