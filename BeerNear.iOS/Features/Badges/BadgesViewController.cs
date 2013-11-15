@@ -19,10 +19,10 @@ namespace BeerNear.iOS
 
 		public BadgesViewController (IntPtr handle) : base (handle)
 		{
+			this._untappdService = new UntappdService ();
+
 			this.Title = NSBundle.MainBundle.LocalizedString ("Badges", "Badges");
 			this.TabBarItem.Image = UIImage.FromBundle ("first");
-
-			this._untappdService = new UntappdService ();
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -33,10 +33,20 @@ namespace BeerNear.iOS
 			// Release any cached data, images, etc that aren't in use.
 		}
 
-		void HandleAppsCollectionChanged (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+		void HandleBadgesCollectionChanged (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
 		{
 			// Whenever the Items change, reload the data.
 			this.TableView.ReloadData ();
+		}
+
+		void HandleNetworkActivityStarted (object sender, EventArgs args)
+		{
+			UIApplication.SharedApplication.NetworkActivityIndicatorVisible = true;
+		}
+
+		void HandleNetworkActivityEnded(object sender, EventArgs args)
+		{
+			UIApplication.SharedApplication.NetworkActivityIndicatorVisible = false;
 		}
 
 		#region View lifecycle
@@ -44,12 +54,20 @@ namespace BeerNear.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+		
+			var source = new BadgesTableSource (_untappdService);
+			source.BadgeDataModified += HandleBadgeDataModified;
+			source.NetworkActivityStarted += HandleNetworkActivityStarted;
+			source.NetworkActivityEnded += HandleNetworkActivityEnded;
 
-			this._untappdService.GetUserBadgesAsync ("derekhubbard", (badges) => {
-				InvokeOnMainThread(() => {
-					this.TableView.Source = new BadgesTableSource(badges);
-					this.TableView.ReloadData();
-				});
+			source.LoadInitialData (); // This smells.  Can we avoid initializing this here?  Is there a delegate in the UITableViewSource that we can implement?
+			this.TableView.Source = source;
+		}
+
+		void HandleBadgeDataModified (object sender, EventArgs args)
+		{
+			this.InvokeOnMainThread (() => {
+				this.TableView.ReloadData();
 			});
 		}
 

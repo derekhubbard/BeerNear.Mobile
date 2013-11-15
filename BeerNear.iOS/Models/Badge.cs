@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json;
+using MonoTouch.UIKit;
 
 namespace BeerNear.iOS
 {
@@ -13,6 +14,14 @@ namespace BeerNear.iOS
 
 		[JsonProperty(PropertyName = "badge_description")]
 		public string BadgeDescription { get; set; }
+
+		public string BadgeImageSmallUrl { get; set; }
+
+		public string BadgeImageMediumUrl { get; set; }
+
+		public byte[] BadgeImageMedium { get; set; }
+
+		public string BadgeImageLargeUrl { get; set; }
 	}
 }
 

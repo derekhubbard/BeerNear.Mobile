@@ -18,13 +18,16 @@ namespace BeerNear.iOS
 		{
 		}
 
-		public void BindDataToCell(Badge badge)
+		public void BindDataToCell(int cellTag, Badge badge)
 		{
+			this.Tag = cellTag;
 			this.BadgeName.Text = badge.BadgeName;
 			this.BadgeDescription.Text = badge.BadgeDescription;
-			// TODO: Replace with valid fallback image.
-//			this.BadgeImage.Image = ImageLoader.DefaultRequestImage (new Uri ("https://www.google.com/images/srpr/logo11w.png"), this) ?? null;
-			// TODO: Bind additional properties
+			if (badge.BadgeImageMedium != null) {
+				this.BadgeImage.Image = new UIImage (NSData.FromArray (badge.BadgeImageMedium));
+			}
+
+			// TODO: Consider loading fallback placeholder image if the image is not available.
 		}
 	}
 }

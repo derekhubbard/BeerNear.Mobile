@@ -68,7 +68,10 @@ namespace BeerNear.iOS
 				                                                        { 
 					BadgeId = (int)x["badge_id"],
 					BadgeName = (string)x["badge_name"],
-					BadgeDescription = (string)x["badge_description"]
+					BadgeDescription = (string)x["badge_description"],
+					BadgeImageSmallUrl = (string)x["media"]["badge_image_sm"],
+					BadgeImageMediumUrl = (string)x["media"]["badge_image_md"],
+					BadgeImageLargeUrl = (string)x["media"]["badge_image_lg"]
 				}).ToList();
 
 				callback (badges);

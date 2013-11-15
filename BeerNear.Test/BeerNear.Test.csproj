@@ -33,9 +33,28 @@
     <Reference Include="nunit.framework">
       <Private>False</Private>
     </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\packages\FluentAssertions.2.1.0.0\lib\net40\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
+    <Compile Include="BeerNear.iOS\Features\Badges\BadgesTableCellTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="BeerNear.iOS\" />
+    <Folder Include="BeerNear.iOS\Features\" />
+    <Folder Include="BeerNear.iOS\Features\Badges\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeerNear.iOS\BeerNear.iOS.csproj">
+      <Project>{697F131A-45BE-40D9-83D1-43B3DC18E24D}</Project>
+      <Name>BeerNear.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>
